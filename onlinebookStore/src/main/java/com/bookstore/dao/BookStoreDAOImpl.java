@@ -107,7 +107,7 @@ public class BookStoreDAOImpl implements BookStoreDAO {
 		int val = query.executeUpdate();
 		
 		System.out.println( "Inside : "+val );
-		return 0;
+		return val;
 	}
 	
 	
@@ -123,7 +123,7 @@ public class BookStoreDAOImpl implements BookStoreDAO {
 		int val = query.executeUpdate();
 		
 		System.out.println( "Inside : "+val );
-		return 0;
+		return val;
 	}
 	
 	@Override
