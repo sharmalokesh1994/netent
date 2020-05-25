@@ -1,0 +1,44 @@
+package com.bookstore.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.bookstore.dao.BookStoreDAO;
+import com.bookstore.entity.Customer;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+
+	// need to inject customer dao
+	@Autowired
+	private BookStoreDAO bookStoreDAO;
+
+	@Override
+	@Transactional
+	public void saveCustomer(Customer theCustomer) {
+
+		bookStoreDAO.saveObject(theCustomer);
+	}
+
+	@Override
+	@Transactional
+	public Customer getCustomer(int theId) {
+		
+		return bookStoreDAO.getCustomer(theId);
+	}
+
+	@Override
+	@Transactional
+	public void deleteCustomer(int theId) {
+		
+		bookStoreDAO.deleteCustomer(theId);
+	}
+}
+
+
+
+
+
